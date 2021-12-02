@@ -24,9 +24,10 @@ mongoose.connect(process.env.MONGO_DB_CONSTRING, (error) => {
 
     else {
         console.log(`MongoDB is connected to the ${PORT}`);
+
+        //you need to listen to the server if it is working
+        // on the specified PORT
+        app.listen(PORT, () => console.log(`Server is up and runing  PORT: ${PORT}`));
     }
 });
 
-//you need to listen to the server if it is working
-// on the specified PORT
-app.listen(PORT, () => console.log(`Server is up and runing  PORT: ${PORT}`));
