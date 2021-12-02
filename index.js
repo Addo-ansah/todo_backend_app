@@ -11,8 +11,9 @@ const app = express();
 app.use(express.json());
 
 //use this to port for our server
-const PORT = 5000;
-// create a route to handle GET request on the index route 
+const PORT = process.env.PORT ?? 5000;
+
+// create a route to handle GET request on the index route
 app.get("/", (req, res) => {
     res.send("Hello World");
 });
